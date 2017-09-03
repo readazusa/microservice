@@ -1,0 +1,15 @@
+server:
+  port: 1002
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: eurekaslave
+  client:
+#    fetch-registry: false
+#    register-with-eureka: false
+    service-url:
+      defaultZone: http://eurekamaster:1001/eureka
+
+

@@ -1,0 +1,12 @@
+server:
+  port: 2001
+spring:
+  application:
+    name: one-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekamaster:1001/eureka,http://eurekaslave:1001/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 30    #监测时间
+    lease-expiration-duration-in-seconds: 90  #失效时间

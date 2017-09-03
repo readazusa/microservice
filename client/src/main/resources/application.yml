@@ -1,0 +1,20 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: microservice-client
+management:
+  context-path: /client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekamaster:1001/eureka,http://eurekaslave:1001/eureka
+  instance:
+    status-page-url-path: ${management.context-path}/info
+
+zuul:
+  routes:
+    users:
+      path: /api/**
+      serviceId: one-service
