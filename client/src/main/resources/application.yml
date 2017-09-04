@@ -3,9 +3,11 @@ server:
 spring:
   application:
     name: microservice-client
+  zipkin:
+    base-url: http://locahost:4001
+    enabled: true
 management:
   context-path: /client
-
 eureka:
   client:
     service-url:
@@ -18,3 +20,12 @@ zuul:
     users:
       path: /api/**
       serviceId: one-service
+
+#取消验证
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+

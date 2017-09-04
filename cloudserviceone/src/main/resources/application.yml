@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: one-service
+  zipkin:
+    base-url: http://localhost:4001
+    enabled: true
 eureka:
   client:
     service-url:
